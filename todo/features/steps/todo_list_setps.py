@@ -1,22 +1,7 @@
 from behave import given, when, then
 from todo_list import ToDoListManager
-from behave import given, when, then
-from todo_list import ToDoListManager
 
 # Inicializamos el objeto ToDoListManager en el contexto
-@given('the to-do list is empty')
-def step_impl(context):
-    context.todo_manager = ToDoListManager()
-
-@when('the user adds a task "{task}"')
-def step_impl(context, task):
-    context.todo_manager.add_task(task)
-
-@then('the to-do list should contain "{task}"')
-def step_impl(context, task):
-    found_task = any(t['description'] == task for t in context.todo_manager.tasks)
-    assert found_task, f'Task "{task}" not found in the to-do list'
-
 @given('the to-do list is empty')
 def step_impl(context):
     context.todo_manager = ToDoListManager()
